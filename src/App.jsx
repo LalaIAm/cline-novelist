@@ -6,6 +6,8 @@ import { Routes, Route } from 'react-router-dom';
 // import RegisterPage from './pages/auth/RegisterPage';
 // import DashboardPage from './pages/dashboard/DashboardPage';
 import EditorComparisonPage from './pages/EditorComparisonPage';
+import CharacterManagementPage from './pages/CharacterManagementPage';
+import PlotManagementPage from './pages/PlotManagementPage';
 
 // Placeholder components for initial setup
 const PlaceholderPage = ({ title }) => (
@@ -29,6 +31,8 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/editor-comparison" element={<EditorComparisonPage />} />
+        <Route path="/characters" element={<CharacterManagementPage />} />
+        <Route path="/plot" element={<PlotManagementPage />} />
         {/* Add more routes as pages are created */}
         <Route path="*" element={<PlaceholderPage title="404 - Page Not Found" />} />
       </Routes>

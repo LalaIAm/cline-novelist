@@ -140,5 +140,6 @@ REMEMBER: After every memory reset, I begin completely fresh. The Memory Bank is
 -   List all assumptions and uncertainties you need to clear up before completing any task.
 -   Don't complete the analysis prematurely, continue analyzing even if you think you found a solution
 
-## DON'T FORGET TO COMMIT!!@
+## DON'T FORGET TO COMMIT!!!
 -   Don't forget to create a new Git branch every time you implement a new feature and to commit your code changes 
+-   Don't forget to push changes to the remote repository
