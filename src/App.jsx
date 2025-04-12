@@ -8,6 +8,7 @@ import { Routes, Route } from 'react-router-dom';
 import EditorComparisonPage from './pages/EditorComparisonPage';
 import CharacterManagementPage from './pages/CharacterManagementPage';
 import PlotManagementPage from './pages/PlotManagementPage';
+import ResponsiveWireframesPage from './pages/ResponsiveWireframesPage';
 
 // Placeholder components for initial setup
 const PlaceholderPage = ({ title }) => (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/editor-comparison" element={<EditorComparisonPage />} />
         <Route path="/characters" element={<CharacterManagementPage />} />
         <Route path="/plot" element={<PlotManagementPage />} />
+        <Route path="/responsive-wireframes" element={<ResponsiveWireframesPage />} />
         {/* Add more routes as pages are created */}
         <Route path="*" element={<PlaceholderPage title="404 - Page Not Found" />} />
       </Routes>
