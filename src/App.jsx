@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
+// Authentication pages
+import LoginPage from './pages/auth/LoginPage';
+import RegisterPage from './pages/auth/RegisterPage';
+import ForgotPasswordPage from './pages/auth/ForgotPasswordPage';
+import ResetPasswordPage from './pages/auth/ResetPasswordPage';
+import PrivateRoute from './components/auth/PrivateRoute';
+
 // Import pages as they are created
-// import HomePage from './pages/HomePage';
-// import LoginPage from './pages/auth/LoginPage';
-// import RegisterPage from './pages/auth/RegisterPage';
-// import DashboardPage from './pages/dashboard/DashboardPage';
 import EditorComparisonPage from './pages/EditorComparisonPage';
 import CharacterManagementPage from './pages/CharacterManagementPage';
 import PlotManagementPage from './pages/PlotManagementPage';
 import ResponsiveWireframesPage from './pages/ResponsiveWireframesPage';
+
+// Import actions
+import { getMe } from './redux/features/auth/authSlice';
 
 // Placeholder components for initial setup
 const PlaceholderPage = ({ title }) => (
@@ -19,23 +27,38 @@ const PlaceholderPage = ({ title }) => (
 );
 
 const HomePage = () => <PlaceholderPage title="Novylist - Home" />;
-const LoginPage = () => <PlaceholderPage title="Login" />;
-const RegisterPage = () => <PlaceholderPage title="Register" />;
 const DashboardPage = () => <PlaceholderPage title="Dashboard" />;
 
 function App() {
+  const dispatch = useDispatch();
+
+  // Check if user is authenticated on app load
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      dispatch(getMe());
+    }
+  }, [dispatch]);
+
   return (
     <div className="app">
       <Routes>
+        {/* Public routes */}
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+        <Route path="/reset-password/:resettoken" element={<ResetPasswordPage />} />
         <Route path="/editor-comparison" element={<EditorComparisonPage />} />
-        <Route path="/characters" element={<CharacterManagementPage />} />
-        <Route path="/plot" element={<PlotManagementPage />} />
         <Route path="/responsive-wireframes" element={<ResponsiveWireframesPage />} />
-        {/* Add more routes as pages are created */}
+        
+        {/* Protected routes */}
+        <Route element={<PrivateRoute />}>
+          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/characters" element={<CharacterManagementPage />} />
+          <Route path="/plot" element={<PlotManagementPage />} />
+        </Route>
+        
+        {/* Catch all */}
         <Route path="*" element={<PlaceholderPage title="404 - Page Not Found" />} />
       </Routes>
     </div>
