@@ -7,7 +7,7 @@ Novylist follows a client-server architecture with a React frontend and Node.js 
 - **Component-Based Structure** - Hierarchical React components with clear separation of concerns
 - **State Management** - Redux Toolkit for global state management and React Context for localized state
 - **UI Framework** - TailwindCSS for styling with emphasis on consistency and responsiveness
-- **Editor Integration** - Draftjs/Quilljs for rich text editing capabilities
+- **Editor Integration** - Quill.js for rich text editing capabilities
 - **Client-Side Routing** - React Router for navigation between application sections
 
 ### Backend Architecture
@@ -22,7 +22,7 @@ Novylist follows a client-server architecture with a React frontend and Node.js 
 ### Frontend Technology Choices
 - **React with Vite** - For component-based UI with fast development and hot module replacement
 - **Redux Toolkit** - For predictable state management across the application
-- **Draftjs/Quilljs** - For sophisticated rich text editing capabilities
+- **Quill.js** - For sophisticated rich text editing capabilities with customization
 - **TailwindCSS** - For utility-first styling approach with consistency
 
 ### Backend Technology Choices
@@ -33,7 +33,10 @@ Novylist follows a client-server architecture with a React frontend and Node.js 
 
 ### Data Storage Strategy
 - **Document-Oriented Design** - Using MongoDB's document model for hierarchical narrative structures
-- **Version Control Mechanism** - Custom implementation for tracking draft history and branching
+- **Reference-Based Relationships** - Using document references instead of embedding for flexibility and performance
+- **Version Control Mechanism** - Parent-child relationship between versions with branching support
+- **Polymorphic References** - For flexible entity relationships (e.g., comments)
+- **Emotional and Narrative Tracking** - Specialized fields for tracking narrative arcs and character development
 
 ## Design Patterns in Use
 
@@ -48,11 +51,36 @@ Novylist follows a client-server architecture with a React frontend and Node.js 
 - **Middleware Pattern** - For authentication, logging, error handling
 - **Repository Pattern** - Abstracting data access layer
 - **Observer Pattern** - For real-time updates in collaborative features
+- **Virtual Population Pattern** - Using Mongoose virtuals for relationship loading
 
 ### AI Integration Patterns
 - **Strategy Pattern** - For different AI assistance modes based on user preferences
 - **Adapter Pattern** - For integrating the OpenAI API
 - **Command Pattern** - For encapsulating AI requests and operations
+
+## Database Schema Structure
+
+### Core Models and Relationships
+```
+Novel (top-level container)
+├── Versions (version control snapshots)
+│   ├── Chapters (major narrative divisions)
+│   │   ├── Scenes (narrative units)
+│   │   │   └── Beats (smallest narrative elements)
+├── Characters (entities in the narrative)
+│   └── Relationships (connections between characters)
+├── PlotElements (events, conflicts, decisions)
+└── Comments (feedback attached to any entity)
+```
+
+### Key Schema Design Principles
+- **Hierarchical Narrative Structure** - Novel → Version → Chapter → Scene → Beat
+- **Version Control with Branching** - Parent-child relationships between versions
+- **Character Attribute Organization** - Physical, personality, and background attributes
+- **Emotional Arc Tracking** - Fields for tracking emotional values and tension
+- **Timeline and Structure Positioning** - For plot visualization and structure analysis
+- **Polymorphic References** - For attaching comments to any entity type
+- **Comprehensive Indexing** - Strategic indexes for query optimization
 
 ## Component Relationships
 
@@ -64,7 +92,7 @@ App
 │   ├── ProjectList
 │   └── UserStats
 ├── Editor
-│   ├── WritingCanvas (Draftjs/Quilljs)
+│   ├── WritingCanvas (Quill.js)
 │   ├── AIAssistancePanel
 │   ├── VersionControl
 │   └── CollaborationTools
@@ -89,7 +117,14 @@ Server
 └── Database Models
     ├── User Model
     ├── Novel Model
-    └── Settings Model
+    ├── Version Model
+    ├── Chapter Model
+    ├── Scene Model
+    ├── Beat Model
+    ├── Character Model
+    ├── Relationship Model
+    ├── PlotElement Model
+    └── Comment Model
 ```
 
 ## Critical Implementation Paths
@@ -104,19 +139,26 @@ Server
 3. Suggestions displayed in UI → User accepts/rejects → Content updated
 
 ### Version Control Implementation
-1. User creates snapshot → Differential changes stored → Version history updated
-2. User creates branch → Base version copied → Independent edits tracked
+1. User creates snapshot → New version created → Linked to parent version
+2. User creates branch → New version with branch flag → Independent development path
 3. Branch merging → Conflicts identified → Resolution UI presented
 
-### Real-Time Collaboration Implementation
-1. User joins session → WebSocket connection established → Current document state synced
-2. User makes edits → Changes broadcast via Socket.IO → Other users' views updated
-3. Conflict detection → Lock mechanism or operational transforms → Consistent state maintained
+### Narrative Structure Management
+1. Novel contains versions → Active version displayed to user
+2. Version contains chapters → Chapters contain scenes → Scenes contain beats
+3. Writer navigates hierarchy → Edits appropriate level → Content saved to database
+
+### Character and Plot Management
+1. Characters defined at novel level → Appear in scenes and beats
+2. Relationships connect characters → Show dynamics and evolution
+3. Plot elements organized in timeline → Linked to scenes and characters
 
 ## Performance Considerations
 - **Frontend Optimization** - Code splitting, lazy loading, and memoization for React components
 - **Backend Caching** - Redis or in-memory caching for frequently accessed data and AI responses
 - **Database Indexing** - Strategic indexes on frequently queried fields
+- **Document Size Management** - References instead of embedding for large collections
+- **Query Optimization** - Field selection and controlled population depths
 - **Network Optimization** - Compression and chunking for Socket.IO communications
 
 ## Security Implementation
