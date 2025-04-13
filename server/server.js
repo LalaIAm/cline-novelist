@@ -3,6 +3,10 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
 const path = require('path');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const helmet = require('helmet');
+const passport = require('./src/config/passport');
 const connectDB = require('./src/config/db');
 
 // Load environment variables
@@ -17,9 +21,30 @@ if (process.env.NODE_ENV !== 'test') {
 }
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(helmet()); // Security headers
+
+// Session configuration for Passport
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'novylist_secret',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    secure: process.env.NODE_ENV === 'production',
+    httpOnly: true,
+    maxAge: 24 * 60 * 60 * 1000 // 1 day
+  }
+}));
+
+// Initialize Passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Request logging in development mode
 if (process.env.NODE_ENV === 'development') {
@@ -27,8 +52,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // API Routes
-// Will add routes here as they are created
-// app.use('/api/auth', require('./src/routes/auth'));
+app.use('/api/auth', require('./src/routes/auth'));
 // app.use('/api/users', require('./src/routes/users'));
 // app.use('/api/novels', require('./src/routes/novels'));
 

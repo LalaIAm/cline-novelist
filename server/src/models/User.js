@@ -21,10 +21,35 @@ const UserSchema = new mongoose.Schema({
     minlength: [3, 'Username must be at least 3 characters'],
     maxlength: [30, 'Username cannot be more than 30 characters'],
   },
+  authProvider: {
+    type: String,
+    enum: ['local', 'google', 'linkedin'],
+    default: 'local',
+  },
+  socialId: {
+    type: String,
+    select: false,
+  },
+  socialProfile: {
+    type: mongoose.Schema.Types.Mixed,
+    select: false,
+  },
   password: {
     type: String,
-    required: [true, 'Please add a password'],
-    minlength: [6, 'Password must be at least 6 characters'],
+    required: function() { 
+      return this.authProvider === 'local'; 
+    },
+    minlength: [8, 'Password must be at least 8 characters'],
+    validate: {
+      validator: function(v) {
+        // Skip validation for social auth users
+        if (this.authProvider !== 'local') return true;
+        
+        // Check for at least 1 letter, 1 number, and 1 special character
+        return /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/.test(v);
+      },
+      message: 'Password must contain at least 1 letter, 1 number, and 1 special character'
+    },
     select: false,
   },
   profile: {
