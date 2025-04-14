@@ -65,6 +65,93 @@ const UserSchema = new mongoose.Schema({
       },
     },
   },
+  subscription: {
+    tier: {
+      type: String,
+      enum: ['free', 'standard', 'premium'],
+      default: 'free',
+    },
+    startDate: {
+      type: Date,
+      default: Date.now,
+    },
+    endDate: Date,
+    status: {
+      type: String,
+      enum: ['active', 'canceled', 'expired'],
+      default: 'active',
+    },
+    paymentMethod: {
+      type: mongoose.Schema.Types.Mixed,
+      select: false,
+    },
+  },
+  usage: {
+    aiRequests: {
+      daily: {
+        count: {
+          type: Number,
+          default: 0,
+        },
+        lastReset: {
+          type: Date,
+          default: Date.now,
+        },
+      },
+      monthly: {
+        tokensUsed: {
+          type: Number,
+          default: 0,
+        },
+        lastReset: {
+          type: Date,
+          default: Date.now,
+        },
+      },
+    },
+    features: {
+      writingContinuation: {
+        count: {
+          type: Number,
+          default: 0,
+        },
+        tokensUsed: {
+          type: Number,
+          default: 0,
+        },
+      },
+      characterDevelopment: {
+        count: {
+          type: Number,
+          default: 0,
+        },
+        tokensUsed: {
+          type: Number,
+          default: 0,
+        },
+      },
+      plotAnalysis: {
+        count: {
+          type: Number,
+          default: 0,
+        },
+        tokensUsed: {
+          type: Number,
+          default: 0,
+        },
+      },
+      dialogueEnhancement: {
+        count: {
+          type: Number,
+          default: 0,
+        },
+        tokensUsed: {
+          type: Number,
+          default: 0,
+        },
+      },
+    },
+  },
   settings: {
     theme: {
       type: String,
