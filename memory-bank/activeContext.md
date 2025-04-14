@@ -22,6 +22,21 @@ The current focus is on Phase 1: Research and Design, specifically working on AI
 
 ## Recent Changes
 
+- **Implemented Rate Limiting and Cost Management for AI Features**:
+  - Created Redis configuration for distributed rate limiting storage
+  - Implemented tiered rate limiting based on subscription tiers (Free: 20/day, Standard: 100/day, Premium: Unlimited)
+  - Developed token budget management system with monthly allocations (Free: 100K, Standard: 500K, Premium: 2M)
+  - Created feature-specific token budget allocations for writing, character, plot, and dialogue features
+  - Implemented comprehensive cost management service with pricing for different OpenAI models
+  - Added cost estimation, tracking, and reporting capabilities
+  - Developed tiered model selection for different subscription levels
+  - Built OpenAI service adapter with integrated rate limiting and cost controls
+  - Created AI controller with endpoints for all AI features
+  - Added usage statistics and cost estimation endpoints
+  - Implemented proper error handling for rate limit and budget exceeded scenarios
+  - Created detailed documentation for the rate limiting and cost management architecture
+  - Updated User model with subscription tier and usage tracking fields
+
 - **Completed Context Handling Implementation**:
   - Implemented comprehensive text segmentation strategies (paragraph, scene, semantic)
   - Created context window management with fixed, sliding, and adaptive strategies
