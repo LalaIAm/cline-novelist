@@ -1,0 +1,138 @@
+{
+  "originalText": "\nLyra's fingers trembled as she carefully turned the pages of the ancient text. The archives were silent save for the occasional creak of the old wooden shelves and the soft whisper of parchment against skin. Each symbol in the book seemed to shimmer slightly under her gaze, as if the magic within recognized her presence.\n\nA chill ran down her spine. The sensation of being watched intensified, and she glanced over her shoulder toward the shadowy corners of the archive room. Nothing. Yet the feeling persisted.\n\n\"I know you're there,\" she said, her voice barely above a whisper. \"You might as well show yourself.\"\n\nThe shadows in the far corner seemed to deepen, then shift. Kaelen emerged, his dark cloak making him nearly invisible until he moved.\n\n\"Your awareness is improving,\" he said, his voice low and grave. \"But others might not announce themselves so readily.\"\n\nLyra clutched the book tighter to her chest. \"What are you doing here? I thought you were meeting with the Royal Council.\"\n\n\"The meeting ended early.\" Kaelen's gaze fell to the book in her hands, his expression hardening. \"What have you found?\"\n",
+  "firstResult": {
+    "continuation": "Lyra's heart raced as she met Kaelen's intense gaze. She hesitated, unsure of how much she should reveal to him. But the urgency in his eyes told her that time was of the essence.\n\n\"I found a text on time magic,\" she admitted, her voice barely above a whisper. \"It belonged to my father. He was studying it before he disappeared.\"\n\nKaelen's eyes widened in surprise, then narrowed in concern. \"Your father was a time mage?\"\n\nLyra nodded, her grip on the book tightening. \"He believed that the artifacts we're searching for are the key to preventing a cataclysm. But he vanished before he could find them all.\"\n\nThe gravity of her words hung heavy in the air between them. Kaelen's expression softened, a flicker of understanding crossing his features.\n\n\"We must find those artifacts,\" he said, determination lacing his voice. \"And we must uncover the truth behind your father's disappearance.\"\n\nA sense of relief washed over Lyra as she realized she wasn't alone in this quest. Kaelen's presence reassured her, his strength bolstering her resolve.\n\n\"But we must be cautious,\" he added, his gaze darting to the shadows lurking in the corners of the archive room. \"There are those who would stop at nothing to claim the artifacts for themselves.\"\n\nAs if on cue, a shiver ran down Lyra's spine, the feeling of being watched returning with renewed intensity. The shadows seemed to ripple and shift, as if concealing unseen dangers.\n\n\"We need to be ready,\" Kaelen said, his voice low but resolute. \"The shadows are closing in, and we must stay one step ahead.\"",
+    "latency": 3815,
+    "tokenUsage": {
+      "prompt": 767,
+      "completion": 347,
+      "total": 1114
+    },
+    "model": "gpt-3.5-turbo",
+    "fromCache": false
+  },
+  "secondResult": {
+    "continuation": "Lyra's heart raced as she met Kaelen's intense gaze. She hesitated, unsure of how much she should reveal to him. But the urgency in his eyes told her that time was of the essence.\n\n\"I found a text on time magic,\" she admitted, her voice barely above a whisper. \"It belonged to my father. He was studying it before he disappeared.\"\n\nKaelen's eyes widened in surprise, then narrowed in concern. \"Your father was a time mage?\"\n\nLyra nodded, her grip on the book tightening. \"He believed that the artifacts we're searching for are the key to preventing a cataclysm. But he vanished before he could find them all.\"\n\nThe gravity of her words hung heavy in the air between them. Kaelen's expression softened, a flicker of understanding crossing his features.\n\n\"We must find those artifacts,\" he said, determination lacing his voice. \"And we must uncover the truth behind your father's disappearance.\"\n\nA sense of relief washed over Lyra as she realized she wasn't alone in this quest. Kaelen's presence reassured her, his strength bolstering her resolve.\n\n\"But we must be cautious,\" he added, his gaze darting to the shadows lurking in the corners of the archive room. \"There are those who would stop at nothing to claim the artifacts for themselves.\"\n\nAs if on cue, a shiver ran down Lyra's spine, the feeling of being watched returning with renewed intensity. The shadows seemed to ripple and shift, as if concealing unseen dangers.\n\n\"We need to be ready,\" Kaelen said, his voice low but resolute. \"The shadows are closing in, and we must stay one step ahead.\"",
+    "latency": 0,
+    "tokenUsage": {
+      "prompt": 767,
+      "completion": 347,
+      "total": 1114
+    },
+    "model": "gpt-3.5-turbo",
+    "fromCache": true,
+    "cacheType": "exact-match"
+  },
+  "premiumResult": {
+    "continuation": "Lyra's heart raced as she met Kaelen's intense gaze. She hesitated, unsure of how much she should reveal to him. But the urgency in his eyes told her that time was of the essence.\n\n\"I found a text on time magic,\" she admitted, her voice barely above a whisper. \"It belonged to my father. He was studying it before he disappeared.\"\n\nKaelen's eyes widened in surprise, then narrowed in concern. \"Your father was a time mage?\"\n\nLyra nodded, her grip on the book tightening. \"He believed that the artifacts we're searching for are the key to preventing a cataclysm. But he vanished before he could find them all.\"\n\nThe gravity of her words hung heavy in the air between them. Kaelen's expression softened, a flicker of understanding crossing his features.\n\n\"We must find those artifacts,\" he said, determination lacing his voice. \"And we must uncover the truth behind your father's disappearance.\"\n\nA sense of relief washed over Lyra as she realized she wasn't alone in this quest. Kaelen's presence reassured her, his strength bolstering her resolve.\n\n\"But we must be cautious,\" he added, his gaze darting to the shadows lurking in the corners of the archive room. \"There are those who would stop at nothing to claim the artifacts for themselves.\"\n\nAs if on cue, a shiver ran down Lyra's spine, the feeling of being watched returning with renewed intensity. The shadows seemed to ripple and shift, as if concealing unseen dangers.\n\n\"We need to be ready,\" Kaelen said, his voice low but resolute. \"The shadows are closing in, and we must stay one step ahead.\"",
+    "latency": 0,
+    "tokenUsage": {
+      "prompt": 767,
+      "completion": 347,
+      "total": 1114
+    },
+    "model": "gpt-3.5-turbo",
+    "fromCache": true,
+    "cacheType": "exact-match"
+  },
+  "secondPremiumResult": {
+    "continuation": "Lyra's heart raced as she met Kaelen's intense gaze. She hesitated, unsure of how much she should reveal to him. But the urgency in his eyes told her that time was of the essence.\n\n\"I found a text on time magic,\" she admitted, her voice barely above a whisper. \"It belonged to my father. He was studying it before he disappeared.\"\n\nKaelen's eyes widened in surprise, then narrowed in concern. \"Your father was a time mage?\"\n\nLyra nodded, her grip on the book tightening. \"He believed that the artifacts we're searching for are the key to preventing a cataclysm. But he vanished before he could find them all.\"\n\nThe gravity of her words hung heavy in the air between them. Kaelen's expression softened, a flicker of understanding crossing his features.\n\n\"We must find those artifacts,\" he said, determination lacing his voice. \"And we must uncover the truth behind your father's disappearance.\"\n\nA sense of relief washed over Lyra as she realized she wasn't alone in this quest. Kaelen's presence reassured her, his strength bolstering her resolve.\n\n\"But we must be cautious,\" he added, his gaze darting to the shadows lurking in the corners of the archive room. \"There are those who would stop at nothing to claim the artifacts for themselves.\"\n\nAs if on cue, a shiver ran down Lyra's spine, the feeling of being watched returning with renewed intensity. The shadows seemed to ripple and shift, as if concealing unseen dangers.\n\n\"We need to be ready,\" Kaelen said, his voice low but resolute. \"The shadows are closing in, and we must stay one step ahead.\"",
+    "latency": 0,
+    "tokenUsage": {
+      "prompt": 767,
+      "completion": 347,
+      "total": 1114
+    },
+    "model": "gpt-3.5-turbo",
+    "fromCache": true,
+    "cacheType": "exact-match"
+  },
+  "cacheStats": {
+    "exactMatch": {
+      "hits": 3,
+      "misses": 1,
+      "sets": 1,
+      "evictions": 0,
+      "hitRate": "75.00%",
+      "size": 1,
+      "maxSize": 1000
+    },
+    "contextAware": {
+      "hits": 0,
+      "misses": 1,
+      "sets": 1,
+      "evictions": 0,
+      "hitRate": "0.00%",
+      "size": 1,
+      "maxSize": 1000
+    }
+  },
+  "configuration": {
+    "models": {
+      "standard": "gpt-3.5-turbo",
+      "premium": "gpt-4"
+    },
+    "temperature": 0.7,
+    "maxTokens": 1000,
+    "maxContextTokens": 4000,
+    "useCache": true,
+    "fallbackToStandardModel": true
+  },
+  "novel": {
+    "metadata": {
+      "title": "Echoes of Twilight",
+      "genre": "Fantasy",
+      "writingStyle": "Descriptive, character-focused, with detailed world-building",
+      "pointOfView": "Third-person limited, switching between main characters",
+      "setting": "The kingdom of Aethoria, a medieval fantasy world with elemental magic",
+      "narrativeFocus": "Character development and political intrigue"
+    },
+    "characters": [
+      {
+        "name": "Lyra Dawnseeker",
+        "role": "Protagonist",
+        "description": "A 24-year-old scholar with rare ability to manipulate time magic. Determined but socially awkward.",
+        "goals": "Discover the truth about her missing father and the ancient artifacts he was studying.",
+        "conflicts": "Struggles with the ethical implications of her growing powers."
+      },
+      {
+        "name": "Kaelen Nightshade",
+        "role": "Deuteragonist",
+        "description": "A 30-year-old former royal guard with shadow magic abilities. Honorable but haunted by past failures.",
+        "goals": "Protect the royal family from a prophesied threat while seeking redemption for past mistakes.",
+        "conflicts": "Torn between duty to the crown and growing suspicions about royal corruption."
+      },
+      {
+        "name": "Erindor the Wise",
+        "role": "Mentor",
+        "description": "An elderly archmage with vast knowledge of elemental magic. Patient and enigmatic.",
+        "goals": "Guide the next generation of mages while hiding dangerous secrets about magic's true nature.",
+        "conflicts": "Knows too much about the coming catastrophe but must reveal information carefully."
+      }
+    ],
+    "plotElements": [
+      {
+        "type": "Main Plot",
+        "description": "The hunt for five elemental artifacts that can prevent a magical cataclysm.",
+        "status": "In progress - two artifacts recovered, three remaining"
+      },
+      {
+        "type": "Subplot",
+        "description": "Political intrigue within the royal court as factions vie for influence.",
+        "status": "Ongoing - Kaelen has discovered evidence of treason"
+      },
+      {
+        "type": "Subplot",
+        "description": "Lyra's search for her father leads to revelations about her own identity.",
+        "status": "Recent discovery - found her father's journal with coded messages"
+      }
+    ],
+    "structure": {
+      "currentChapter": 12,
+      "chapterTitle": "Shadows in the Archives",
+      "currentScene": 3,
+      "previousSceneSummary": "Lyra discovered a hidden compartment in her father's study containing an ancient text on time magic. As she began to decipher it, she sensed someone watching her.",
+      "position": "Middle of Chapter 12, approaching a tension point"
+    }
+  }
+}

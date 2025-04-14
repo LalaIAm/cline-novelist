@@ -1,0 +1,75 @@
+{
+  "originalText": "\nLyra's fingers trembled as she carefully turned the pages of the ancient text. The archives were silent save for the occasional creak of the old wooden shelves and the soft whisper of parchment against skin. Each symbol in the book seemed to shimmer slightly under her gaze, as if the magic within recognized her presence.\n\nA chill ran down her spine. The sensation of being watched intensified, and she glanced over her shoulder toward the shadowy corners of the archive room. Nothing. Yet the feeling persisted.\n\n\"I know you're there,\" she said, her voice barely above a whisper. \"You might as well show yourself.\"\n\nThe shadows in the far corner seemed to deepen, then shift. Kaelen emerged, his dark cloak making him nearly invisible until he moved.\n\n\"Your awareness is improving,\" he said, his voice low and grave. \"But others might not announce themselves so readily.\"\n\nLyra clutched the book tighter to her chest. \"What are you doing here? I thought you were meeting with the Royal Council.\"\n\n\"The meeting ended early.\" Kaelen's gaze fell to the book in her hands, his expression hardening. \"What have you found?\"\n",
+  "result": {
+    "continuation": "\"I...\" Lyra began, but her voice trailed off as she glanced down at the book. She swallowed, attempting to gather her thoughts. \"I think... I think I've found something important.\"\n\nKaelen's gaze didn't waver. \"Show me.\"\n\nTaking a deep breath, she opened the book and flipped through the pages until she found the passage she had been studying. Her finger traced the faded symbols as she read aloud, \"It speaks of a cataclysm, a great upheaval in the fabric of time.\"\n\nKaelen frowned, his eyes flicking between her and the book. \"A prophecy?\"\n\n\"Perhaps,\" Lyra admitted. \"Or a warning. But it's... it's linked to the artifacts. The text mentions five elements, just like father's notes.\"\n\nHis expression was unreadable. \"You believe this book might guide us to the remaining artifacts?\"\n\n\"I don't know,\" she confessed, her voice barely above a whisper. \"But there's more. There's a name mentioned here, a mage powerful enough to control time itself. A name I've seen in father's journal.\"\n\nKaelen leaned closer, the shadows around him seeming to quiver with anticipation. \"And what name is that?\"\n\n\"Erindor.\"\n\nThe silence stretched taut between them, the words hanging in the air like an incantation. Kaelen's face was a mask of calm, but Lyra could see the flicker of surprise in his eyes. \"Erindor,\" he repeated, his voice a low rumble that echoed in the silence of the archive.\n\nLyra nodded, biting her lower lip. \"Yes. And I think... I think he might know more about my father's disappearance than he's admitted.\"\n\nThe tension in the room grew thicker, the quiet hum of the archives now a deafening silence. The shadows seemed to press closer, as if waiting for Kaelen's response. But for a long moment, he said nothing, his dark eyes locked onto Lyra's with an intensity that made her heart race.",
+    "latency": 15392,
+    "tokenUsage": {
+      "prompt": 767,
+      "completion": 422,
+      "total": 1189
+    }
+  },
+  "configuration": {
+    "model": "gpt-4",
+    "temperature": 0.7,
+    "maxTokens": 1000,
+    "maxContextTokens": 4000
+  },
+  "novel": {
+    "metadata": {
+      "title": "Echoes of Twilight",
+      "genre": "Fantasy",
+      "writingStyle": "Descriptive, character-focused, with detailed world-building",
+      "pointOfView": "Third-person limited, switching between main characters",
+      "setting": "The kingdom of Aethoria, a medieval fantasy world with elemental magic",
+      "narrativeFocus": "Character development and political intrigue"
+    },
+    "characters": [
+      {
+        "name": "Lyra Dawnseeker",
+        "role": "Protagonist",
+        "description": "A 24-year-old scholar with rare ability to manipulate time magic. Determined but socially awkward.",
+        "goals": "Discover the truth about her missing father and the ancient artifacts he was studying.",
+        "conflicts": "Struggles with the ethical implications of her growing powers."
+      },
+      {
+        "name": "Kaelen Nightshade",
+        "role": "Deuteragonist",
+        "description": "A 30-year-old former royal guard with shadow magic abilities. Honorable but haunted by past failures.",
+        "goals": "Protect the royal family from a prophesied threat while seeking redemption for past mistakes.",
+        "conflicts": "Torn between duty to the crown and growing suspicions about royal corruption."
+      },
+      {
+        "name": "Erindor the Wise",
+        "role": "Mentor",
+        "description": "An elderly archmage with vast knowledge of elemental magic. Patient and enigmatic.",
+        "goals": "Guide the next generation of mages while hiding dangerous secrets about magic's true nature.",
+        "conflicts": "Knows too much about the coming catastrophe but must reveal information carefully."
+      }
+    ],
+    "plotElements": [
+      {
+        "type": "Main Plot",
+        "description": "The hunt for five elemental artifacts that can prevent a magical cataclysm.",
+        "status": "In progress - two artifacts recovered, three remaining"
+      },
+      {
+        "type": "Subplot",
+        "description": "Political intrigue within the royal court as factions vie for influence.",
+        "status": "Ongoing - Kaelen has discovered evidence of treason"
+      },
+      {
+        "type": "Subplot",
+        "description": "Lyra's search for her father leads to revelations about her own identity.",
+        "status": "Recent discovery - found her father's journal with coded messages"
+      }
+    ],
+    "structure": {
+      "currentChapter": 12,
+      "chapterTitle": "Shadows in the Archives",
+      "currentScene": 3,
+      "previousSceneSummary": "Lyra discovered a hidden compartment in her father's study containing an ancient text on time magic. As she began to decipher it, she sensed someone watching her.",
+      "position": "Middle of Chapter 12, approaching a tension point"
+    }
+  }
+}

@@ -39,48 +39,70 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+// Helper function to load prompts safely
+function safeRequire(path) {
+  try {
+    return require(path);
+  } catch (error) {
+    console.warn(`Warning: Could not load ${path}. This prompt will be skipped.`);
+    return null;
+  }
+}
+
 // Test categories and prompts
 const TEST_PROMPTS = {
   'writing_continuation': [
     {
       title: 'Fantasy Scene Continuation',
-      content: require('./prompts/writing-continuation-fantasy.json')
+      content: safeRequire('./prompts/writing-continuation-fantasy.json')
     },
     {
       title: 'Mystery Dialogue Continuation',
-      content: require('./prompts/writing-continuation-mystery.json')
+      content: safeRequire('./prompts/writing-continuation-mystery.json')
     },
     // Add more prompts as needed
-  ],
+  ].filter(prompt => prompt.content !== null),
+  
   'character_development': [
     {
       title: 'Fantasy Character Development',
-      content: require('./prompts/character-development-fantasy.json')
+      content: safeRequire('./prompts/character-development-fantasy.json')
     },
     // Add more prompts as needed
-  ],
+  ].filter(prompt => prompt.content !== null),
+  
   'plot_hole_identification': [
     {
       title: 'Mystery Plot Hole Analysis',
-      content: require('./prompts/plot-hole-mystery.json')
+      content: safeRequire('./prompts/plot-hole-mystery.json')
     },
     // Add more prompts as needed
-  ],
+  ].filter(prompt => prompt.content !== null),
+  
   'dialogue_enhancement': [
     {
       title: 'Romance Dialogue Enhancement',
-      content: require('./prompts/dialogue-enhancement-romance.json')
+      content: safeRequire('./prompts/dialogue-enhancement-romance.json')
     },
     // Add more prompts as needed
-  ],
+  ].filter(prompt => prompt.content !== null),
+  
   'scene_description': [
     {
       title: 'Sci-fi Setting Description',
-      content: require('./prompts/scene-description-scifi.json')
+      content: safeRequire('./prompts/scene-description-scifi.json')
     },
     // Add more prompts as needed
-  ],
+  ].filter(prompt => prompt.content !== null),
 };
+
+// Remove empty categories
+Object.keys(TEST_PROMPTS).forEach(category => {
+  if (TEST_PROMPTS[category].length === 0) {
+    console.warn(`Warning: Category '${category}' has no valid prompts and will be skipped.`);
+    delete TEST_PROMPTS[category];
+  }
+});
 
 /**
  * Creates the full prompt for a writing continuation test
@@ -117,14 +139,160 @@ Don't summarize or explain what you're doing. Just write the continuation text a
 }
 
 /**
+ * Creates a prompt for character development requests
+ */
+function createCharacterDevelopmentPrompt(promptData) {
+  return `You are an AI writing assistant for a novelist working on a ${promptData.genre} novel. Your task is to provide character development suggestions based on the provided information.
+
+## Character Information
+Character Name: ${promptData.characterName}
+Character Concept: ${promptData.characterConcept}
+Current Description: ${promptData.currentDescription}
+
+## World Context
+${promptData.worldContext}
+
+## Story Role
+${promptData.storyRole}
+
+## Character Goals
+${promptData.characterGoals}
+
+## Character Flaws
+${promptData.characterFlaws}
+
+## Author's Notes
+${promptData.authorNotes}
+
+## Development Request
+${promptData.developmentRequest}
+
+Please provide thoughtful, nuanced character development suggestions that would add depth and complexity to this character while remaining consistent with the established elements.`;
+}
+
+/**
+ * Creates a prompt for plot hole identification and resolution
+ */
+function createPlotHolePrompt(promptData) {
+  return `You are an AI writing assistant for a novelist working on a ${promptData.genre} novel titled "${promptData.novelTitle}". Your task is to help identify and resolve plot holes in the narrative.
+
+## Plot Summary
+${promptData.plotSummary}
+
+## Characters
+Victim: ${promptData.characters.victim}
+Detective: ${promptData.characters.detective}
+Suspects:
+${promptData.characters.suspects.map(suspect => `- ${suspect}`).join('\n')}
+
+## Timeline
+Day Before: ${promptData.timeline.dayBefore}
+Murder Night: ${promptData.timeline.murderNight}
+After Murder: ${promptData.timeline.afterMurder}
+
+## Evidence Found
+${promptData.evidenceFound.map(evidence => `- ${evidence}`).join('\n')}
+
+## Plot Hole Issue
+${promptData.plotHoleIssue}
+
+## Author Request
+${promptData.authorRequest}
+
+Please provide a detailed analysis of the plot holes and suggest logical solutions that maintain the integrity of the mystery.`;
+}
+
+/**
+ * Creates a prompt for dialogue enhancement
+ */
+function createDialogueEnhancementPrompt(promptData) {
+  return `You are an AI writing assistant for a novelist working on a ${promptData.genre} novel. Your task is to enhance dialogue to better convey character and advance the story.
+
+## Scene Context
+${promptData.sceneContext}
+
+## Current Dialogue
+${promptData.currentDialogue}
+
+## Character Information
+Character 1: ${promptData.characterInfo.character1.name}
+- Age: ${promptData.characterInfo.character1.age}
+- Personality: ${promptData.characterInfo.character1.personality}
+- Speech Pattern: ${promptData.characterInfo.character1.speech}
+
+Character 2: ${promptData.characterInfo.character2.name}
+- Age: ${promptData.characterInfo.character2.age}
+- Personality: ${promptData.characterInfo.character2.personality}
+- Speech Pattern: ${promptData.characterInfo.character2.speech}
+
+## Relationship Development
+Initial Dynamic: ${promptData.relationshipDevelopment.initialDynamic}
+Intended Arc: ${promptData.relationshipDevelopment.intendedArc}
+Key Tensions: ${promptData.relationshipDevelopment.keyTensions}
+
+## Tone and Style
+Overall Tone: ${promptData.toneAndStyle.overallTone}
+Dialogue Style: ${promptData.toneAndStyle.dialogueStyle}
+Pacing: ${promptData.toneAndStyle.pacing}
+
+## Enhancement Request
+${promptData.enhancementRequest}
+
+Please rewrite the dialogue to better reflect the characters and their relationship, while maintaining the essential information exchange. Target approximately ${promptData.targetWordCount} words.`;
+}
+
+/**
+ * Creates a prompt for scene description enhancement
+ */
+function createSceneDescriptionPrompt(promptData) {
+  return `You are an AI writing assistant for a novelist working on a ${promptData.genre} novel. Your task is to enhance a scene description to create a more immersive setting.
+
+## Novel Context
+${promptData.novelContext}
+
+## Current Scene Description
+${promptData.currentDescription}
+
+## Writing Parameters
+Point of View: ${promptData.pointOfView}
+Writing Style: ${promptData.writingStyle}
+
+## Focus Elements
+Sensory Details: ${promptData.focusElements.sensoryDetails}
+Worldbuilding: ${promptData.focusElements.worldbuilding}
+Character Focus: ${promptData.focusElements.character}
+
+## Tone Goals
+${promptData.toneGoals}
+
+## Technical Elements
+Technology: ${promptData.technicalElements.technology}
+Environment: ${promptData.technicalElements.environment}
+Alien Biology: ${promptData.technicalElements.alienBiology}
+
+## Enhancement Request
+${promptData.enhancementRequest}
+
+Please provide an enhanced version of the scene description with approximately ${promptData.targetWordCount} words.`;
+}
+
+/**
  * Creates the appropriate prompt based on category and prompt data
  */
 function createPrompt(category, promptData) {
   switch(category) {
     case 'writing_continuation':
       return createContinuationPrompt(promptData);
-    // Add other categories as needed
+    case 'character_development':
+      return createCharacterDevelopmentPrompt(promptData);
+    case 'plot_hole_identification':
+      return createPlotHolePrompt(promptData);
+    case 'dialogue_enhancement':
+      return createDialogueEnhancementPrompt(promptData);
+    case 'scene_description':
+      return createSceneDescriptionPrompt(promptData);
     default:
+      console.warn(`Warning: Unknown category '${category}'. Using default prompt.`);
       return createContinuationPrompt(promptData);
   }
 }

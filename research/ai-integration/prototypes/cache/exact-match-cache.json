@@ -1,0 +1,27 @@
+{
+  "cache": {
+    "bd53ae9c859cc8a69e6a7de923efa460be23d5db4ee4cf8af801e03afb78d12f": {
+      "value": {
+        "continuation": "Lyra's heart raced as she met Kaelen's intense gaze. She hesitated, unsure of how much she should reveal to him. But the urgency in his eyes told her that time was of the essence.\n\n\"I found a text on time magic,\" she admitted, her voice barely above a whisper. \"It belonged to my father. He was studying it before he disappeared.\"\n\nKaelen's eyes widened in surprise, then narrowed in concern. \"Your father was a time mage?\"\n\nLyra nodded, her grip on the book tightening. \"He believed that the artifacts we're searching for are the key to preventing a cataclysm. But he vanished before he could find them all.\"\n\nThe gravity of her words hung heavy in the air between them. Kaelen's expression softened, a flicker of understanding crossing his features.\n\n\"We must find those artifacts,\" he said, determination lacing his voice. \"And we must uncover the truth behind your father's disappearance.\"\n\nA sense of relief washed over Lyra as she realized she wasn't alone in this quest. Kaelen's presence reassured her, his strength bolstering her resolve.\n\n\"But we must be cautious,\" he added, his gaze darting to the shadows lurking in the corners of the archive room. \"There are those who would stop at nothing to claim the artifacts for themselves.\"\n\nAs if on cue, a shiver ran down Lyra's spine, the feeling of being watched returning with renewed intensity. The shadows seemed to ripple and shift, as if concealing unseen dangers.\n\n\"We need to be ready,\" Kaelen said, his voice low but resolute. \"The shadows are closing in, and we must stay one step ahead.\"",
+        "latency": 3815,
+        "tokenUsage": {
+          "prompt": 767,
+          "completion": 347,
+          "total": 1114
+        },
+        "model": "gpt-3.5-turbo",
+        "fromCache": false
+      },
+      "created": 1744590309861,
+      "lastAccessed": 1744590309861,
+      "expiry": 1745195109861
+    }
+  },
+  "stats": {
+    "hits": 0,
+    "misses": 1,
+    "sets": 1,
+    "evictions": 0
+  },
+  "saved": "2025-04-14T00:25:09.862Z"
+}
