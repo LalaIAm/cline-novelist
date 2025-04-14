@@ -185,8 +185,8 @@ As Novylist is in the initial phases of development, the following elements are 
   - [x] Finding documentation and recommendations
   - [x] Basic caching implementation
   - [x] Writing continuation with caching implementation
-  - [ ] Context handling implementation
-  - [ ] Semantic similarity search for context retrieval
+  - [x] Context handling implementation
+  - [x] Semantic similarity search for context retrieval
   - [ ] Rate limiting and cost management implementation
   - [ ] Additional AI feature prototypes (character/plot assistance)
 

@@ -19,7 +19,18 @@
 
 ### AI Integration
 - **OpenAI API** - External service for AI-powered features
-- **GPT-4** - Large language model used for writing assistance
+  - **GPT-3.5-Turbo** - Primary model for standard writing assistance features
+  - **GPT-4** - Premium model for advanced writing assistance features
+  - **Embeddings API** - Used for semantic similarity search in context handling
+- **Context Handling System** - Custom implementation for novel-length content
+  - Text segmentation with multiple strategies (paragraph, scene)
+  - Context window management with sliding windows
+  - Multi-level summarization for distant context
+  - Semantic similarity search for relevant passages
+- **Caching System** - Performance optimization for AI features
+  - In-memory LRU cache for frequent requests
+  - Persistent disk cache for long-term storage
+  - Exact match and context-aware caching strategies
 
 ### Development Tools
 - **Git** - Version control system for source code management
