@@ -1,0 +1,21 @@
+{
+  "genre": "science fiction",
+  "sceneType": "setting introduction",
+  "novelContext": "Earth has established its first deep space colony on an exoplanet. The story follows Dr. Eliza Nakamura, a xenobiologist studying the planet's unique ecosystem, as she uncovers evidence of an ancient alien civilization that may still exist beneath the surface.",
+  "currentDescription": "The colony of New Horizon sprawled across the valley, a collection of white domes and modular structures connected by covered walkways. Beyond the perimeter fence, the purple vegetation of Kepler-22b stretched toward distant mountains. The twin suns were setting, casting long shadows and giving the sky an orange tint.\n\nEliza stepped out of the research dome, breathing in the filtered air through her mask. The monitoring equipment beeped steadily on her wrist, showing acceptable atmospheric conditions. She walked toward the specimen collection area, where several plants were growing in controlled environments.",
+  "pointOfView": "third person limited",
+  "writingStyle": "descriptive with scientific precision, occasional poetic metaphors",
+  "focusElements": {
+    "sensoryDetails": "The unique light of the twin suns, the sounds of the colony, the restricted sensation of experiencing an alien world through protective gear",
+    "worldbuilding": "Colony architecture and technology, hints of the planet's ecosystem, everyday life in a space colony",
+    "character": "Eliza's scientific curiosity, her comfort in this alien environment compared to others, her attention to details others might miss"
+  },
+  "toneGoals": "Wonder mixed with scientific rigor. A sense of both human achievement and smallness against the backdrop of an alien world. Subtle foreshadowing that something ancient and unknown lies beneath the seemingly pristine environment.",
+  "technicalElements": {
+    "technology": "Near-future technology (approx. 2150 CE): Advanced life support, atmospheric processors, modular colony structures, specialized scientific equipment",
+    "environment": "Oxygen-nitrogen atmosphere with toxic compounds requiring filtration, lower gravity than Earth (0.9G), longer day-night cycle (32 hours), binary star system",
+    "alienBiology": "Carbon-based but with alternative biochemistry, purple pigmentation instead of green chlorophyll, resilient to radiation, complex ecosystem with symbiotic relationships"
+  },
+  "enhancementRequest": "I want to expand and enhance this setting description to make the colony and the alien world feel more vivid and lived-in. I'd like more sensory details that convey the otherness of this environment while maintaining scientific plausibility. The description should establish both the human element (the colony and its inhabitants) and the mysterious alien environment that Eliza is studying. Please include subtle hints about the ancient civilization that might be detected by a careful scientist but overlooked by others. The enhanced description should immerse readers in this world while setting up the scientific mystery at the heart of the novel.",
+  "targetWordCount": 400
+}
