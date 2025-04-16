@@ -1,0 +1,41 @@
+{
+  "timestamp": "2025-04-14T00-12-47.948Z",
+  "modelComparison": {
+    "gpt-4": {
+      "averageLatency": 17812.166666666668,
+      "averageTokenUsage": {
+        "prompt": 560.3333333333334,
+        "completion": 448.22222222222223,
+        "total": 1008.5555555555555
+      },
+      "averageCost": 0.04370333333333333,
+      "successRate": 100,
+      "totalTests": 18,
+      "successfulTests": 18
+    },
+    "gpt-3.5-turbo": {
+      "averageLatency": 3708,
+      "averageTokenUsage": {
+        "prompt": 560.3333333333334,
+        "completion": 347.77777777777777,
+        "total": 908.1111111111111
+      },
+      "averageCost": 0.0015360555555555557,
+      "successRate": 100,
+      "totalTests": 18,
+      "successfulTests": 18
+    },
+    "gpt-3.5-turbo-instruct": {
+      "averageLatency": null,
+      "averageTokenUsage": {
+        "prompt": null,
+        "completion": null,
+        "total": null
+      },
+      "averageCost": null,
+      "successRate": 0,
+      "totalTests": 18,
+      "successfulTests": 0
+    }
+  }
+}

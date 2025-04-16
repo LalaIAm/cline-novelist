@@ -1,0 +1,31 @@
+{
+  "genre": "romance",
+  "sceneContext": "First meeting between the two main characters at a friend's wedding. They've been seated at the same table and have just discovered they work in competing firms that are bidding on the same major contract.",
+  "currentDialogue": "\"I didn't catch your name,\" she said, taking a sip of champagne.\n\n\"Michael. Michael Chen,\" he replied. \"And you?\"\n\n\"Sophia Rodriguez.\" She extended her hand. \"Nice to meet you.\"\n\nHe shook her hand, holding it a moment longer than necessary. \"So, Sophia, what brings you to Jen's wedding?\"\n\n\"College roommate. You?\"\n\n\"The groom is my cousin.\" Michael looked at his plate. \"Small world.\"\n\n\"It is,\" she agreed, then hesitated. \"Wait... Chen. You don't happen to work at Meridian Partners, do you?\"\n\nMichael's smile faded slightly. \"I do, actually. I'm their lead architect on the Westlake project.\"\n\n\"No way,\" Sophia said, putting down her glass. \"I'm the design director at Innovations Group.\"\n\n\"The competing bid,\" Michael stated flatly.\n\n\"Yes.\"\n\n\"Well, this is awkward,\" he said, forcing a smile.\n\n\"Very,\" she replied.",
+  "characterInfo": {
+    "character1": {
+      "name": "Sophia Rodriguez",
+      "age": 32,
+      "personality": "Ambitious, witty, passionate about sustainable design, guarded about her personal life due to a previous relationship where she was betrayed",
+      "speech": "Direct and professional, but with an underlying warmth. Uses architectural metaphors when emotional."
+    },
+    "character2": {
+      "name": "Michael Chen",
+      "age": 35,
+      "personality": "Perfectionist, quietly confident, values integrity above success, recovering workaholic trying to find better life balance",
+      "speech": "Thoughtful and measured, sometimes self-deprecating humor, tends to ask questions rather than make statements"
+    }
+  },
+  "relationshipDevelopment": {
+    "initialDynamic": "Professional rivalry with unexpected attraction",
+    "intendedArc": "From competitors to confidants to lovers, as they realize they share core values despite working for competing firms",
+    "keyTensions": "Professional ethics vs. personal feelings; past relationship wounds; pressure from their respective companies"
+  },
+  "toneAndStyle": {
+    "overallTone": "Warm, witty contemporary romance with moments of genuine vulnerability",
+    "dialogueStyle": "Modern, natural-sounding conversation with subtext and tension. Mix of professional banter and personal connection",
+    "pacing": "Rhythmic dialogue with a mix of quick exchanges and more reflective moments"
+  },
+  "enhancementRequest": "I feel like this dialogue is too stiff and on-the-nose. I want to enhance it to better show their instant attraction while maintaining the tension of discovering they're competitors. I'd like to add more subtext, personality-specific speech patterns, and physical reactions/micro-expressions during their conversation. The dialogue should hint at their core values and create a memorable 'meet-cute' that sets up their relationship arc. Please rewrite this dialogue to be more dynamic while keeping the same basic information exchange.",
+  "targetWordCount": 350
+}
