@@ -14,6 +14,7 @@ import EditorComparisonPage from './pages/EditorComparisonPage';
 import CharacterManagementPage from './pages/CharacterManagementPage';
 import PlotManagementPage from './pages/PlotManagementPage';
 import ResponsiveWireframesPage from './pages/ResponsiveWireframesPage';
+import WritingWorkspacePage from './pages/WritingWorkspacePage';
 
 // Import actions
 import { getMe } from './redux/features/auth/authSlice';
@@ -50,12 +51,14 @@ function App() {
         <Route path="/reset-password/:resettoken" element={<ResetPasswordPage />} />
         <Route path="/editor-comparison" element={<EditorComparisonPage />} />
         <Route path="/responsive-wireframes" element={<ResponsiveWireframesPage />} />
+        <Route path="/writing-workspace" element={<WritingWorkspacePage />} />
         
         {/* Protected routes */}
         <Route element={<PrivateRoute />}>
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/characters" element={<CharacterManagementPage />} />
           <Route path="/plot" element={<PlotManagementPage />} />
+          <Route path="/write" element={<WritingWorkspacePage />} />
         </Route>
         
         {/* Catch all */}

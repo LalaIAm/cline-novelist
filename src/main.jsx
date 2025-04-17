@@ -1,3 +1,6 @@
+// Import polyfill for Node.js globals used by dependencies
+import './utils/globalPolyfill';
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';

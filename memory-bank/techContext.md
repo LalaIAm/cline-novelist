@@ -18,19 +18,27 @@
 - **JWT** - Authentication mechanism for securing API endpoints
 
 ### AI Integration
-- **OpenAI API** - External service for AI-powered features
+- **Provider-Agnostic Architecture**
+  - **AIServiceInterface** - Common interface for all AI providers
+  - **Provider Adapters** - Implementation-specific adapters for different AI providers
+  - **OpenAI Adapter** - Initial implementation for OpenAI API
+  - **Context Handling Service** - Managing novel-length content for different providers
+  - **Prompt Template Service** - Standardized prompt management
+- **OpenAI Integration** 
   - **GPT-3.5-Turbo** - Primary model for standard writing assistance features
   - **GPT-4** - Premium model for advanced writing assistance features
   - **Embeddings API** - Used for semantic similarity search in context handling
-- **Context Handling System** - Custom implementation for novel-length content
-  - Text segmentation with multiple strategies (paragraph, scene)
-  - Context window management with sliding windows
-  - Multi-level summarization for distant context
+- **Context Handling System** - Implementation for novel-length content
+  - Token budget allocation for different context components
+  - Context windowing strategies for long documents
+  - Multi-level summarization for broader context
   - Semantic similarity search for relevant passages
-- **Caching System** - Performance optimization for AI features
-  - In-memory LRU cache for frequent requests
-  - Persistent disk cache for long-term storage
-  - Exact match and context-aware caching strategies
+  - Caching system to optimize token usage
+- **Provider Selection Strategy**
+  - Feature-specific provider routing
+  - Fallback mechanisms for provider failure
+  - User preference support
+  - Cost optimization options
 
 ### Development Tools
 - **Git** - Version control system for source code management

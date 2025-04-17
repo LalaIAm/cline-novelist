@@ -14,7 +14,7 @@ Novylist follows a client-server architecture with a React frontend and Node.js 
 - **API Layer** - RESTful API endpoints using Express.js
 - **Database Layer** - MongoDB for document-based data storage
 - **Real-Time Communication** - Socket.IO for collaborative features
-- **AI Integration** - OpenAI API (GPT-4) for writing assistance features
+- **AI Integration** - Provider-agnostic architecture supporting multiple AI providers with initial OpenAI implementation
 - **Authentication** - JWT-based auth flow with MFA support
 
 ## Key Technical Decisions
@@ -54,9 +54,14 @@ Novylist follows a client-server architecture with a React frontend and Node.js 
 - **Virtual Population Pattern** - Using Mongoose virtuals for relationship loading
 
 ### AI Integration Patterns
+- **Provider-Agnostic Architecture** - Interface-based design allowing multiple AI providers
 - **Strategy Pattern** - For different AI assistance modes based on user preferences
-- **Adapter Pattern** - For integrating the OpenAI API
+- **Adapter Pattern** - For integrating with different AI providers (OpenAI, Google Vertex AI)
 - **Command Pattern** - For encapsulating AI requests and operations
+- **Factory Pattern** - For creating appropriate provider instances
+- **Observer Pattern** - For streaming token-by-token responses
+- **Context Handling Pattern** - For managing novel-length content with token budgeting
+- **Prompt Template System** - For standardized communication with AI models
 
 ## Database Schema Structure
 
@@ -134,9 +139,11 @@ Server
 2. JWT included in subsequent requests → Middleware validates → Access granted to protected resources
 
 ### AI-Assisted Writing Flow
-1. User writes in editor → Content analyzed → Context extracted
-2. Context sent to AI service → Prompts generated → Suggestions returned
-3. Suggestions displayed in UI → User accepts/rejects → Content updated
+1. User writes in editor → Content analyzed → Context extracted with token budget allocation
+2. Content sent to provider-agnostic AI service → Provider selected based on feature/preferences
+3. Context packaged with appropriate prompt template → Request sent to selected provider
+4. Results normalized for consistent interface → Results streamed token-by-token if enabled
+5. Suggestions displayed in AI panel → User inserts content → Content updated in editor
 
 ### Version Control Implementation
 1. User creates snapshot → New version created → Linked to parent version
